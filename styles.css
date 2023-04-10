@@ -229,7 +229,9 @@ img {
 
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 375px) {
+
+  
   #option-buttons {
     display: flex;
     justify-content: space-around;
