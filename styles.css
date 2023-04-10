@@ -53,6 +53,8 @@ h1 {
   font-size: 18px;
   padding: 10px;
   cursor: pointer;
+  display: flex;
+  justify-content: space-around;
 }
 
 .btn:hover {
@@ -67,6 +69,8 @@ h1 {
   background: rgb(101,101,101);
   background: radial-gradient(circle, rgba(101,101,101,1) 0%, rgba(31,31,31,1) 100%);
 	transition: background-color 0.5s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .container.clicked {
@@ -225,6 +229,11 @@ img {
 
 /* CSS for smaller screens */
 @media only screen and (max-width: 768px) {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
   /* Adjust font size */
   #text {
     font-size: 1.2rem;
@@ -244,6 +253,10 @@ img {
   .btn {
     font-size: 1rem;
     padding: 0.75rem 1.5rem;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
   }
 }
 
