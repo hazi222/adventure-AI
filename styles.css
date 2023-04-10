@@ -229,44 +229,48 @@ img {
 
 
 
-/* CSS for smaller screens */
-@media only screen and (max-width: 768px) {
-  header {
+@media screen and (max-width: 600px) {
+  #option-buttons {
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
   }
 
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-  /* Adjust font size */
-  #text {
-    font-size: 1.2rem;
-  }
-  .btn {
-    font-size: 0.8rem;
-    padding: 0.5rem 1rem;
-  }
-}
-
-/* CSS for larger screens */
-@media only screen and (min-width: 768px) {
-  header {
-    display: flex;
-    flex-direction: column;
-  }
-  /* Reset font size */
   #text {
     font-size: 1.5rem;
   }
+  header {
+    margin-top: 20%;
+    font-size: 1.5rem;
+  }
+
+  .container {
+    margin-top: 20%;
+    font-size: 1rem;
+    padding: 20%;
+  }
+
   .btn {
     font-size: 1rem;
-    padding: 0.75rem 1.5rem;
+    padding: 10%;
   }
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-}
 
+  .spies {
+    margin-top: 20%;
+    padding: 10%;
+  }
+
+  .spy-text {
+    font-size: 1rem;
+    padding: 5%;
+  }
+
+  .spywoman-info,
+  .spyman-info {
+    margin: 10%;
+  }
+
+   .text-spywoman,
+  .overlay-spyman {
+    font-size: 1rem;
+  } 
+}
