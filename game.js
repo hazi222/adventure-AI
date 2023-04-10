@@ -1,18 +1,11 @@
-
-
-
 const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
-
-
 let state = {}
 
 function startGame() {
   state = {}
   showTextNode(1)
-  
 }
-
 
 function showTextNode(textNodeIndex) {
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
@@ -31,7 +24,12 @@ function showTextNode(textNodeIndex) {
       document.body.style.backgroundColor = option.backgroundColor || "black";
     }
   })
+
+  // Save game state in local storage
+  localStorage.setItem('gameState', JSON.stringify(state));
+  localStorage.setItem('currentTextNodeIndex', textNodeIndex);
 }
+
 
 function showOption(option) {
   return option.requiredState == null || option.requiredState(state)
@@ -47,7 +45,13 @@ function selectOption(option) {
   document.querySelector('.selection').remove();
   document.querySelector('#game-container').style.display = 'block';
 }
-
+window.onload = () => {
+  const savedState = JSON.parse(localStorage.getItem('gameState'));
+  if (savedState) {
+    state = savedState;
+    showTextNode(state.currentTextNode);
+  }
+};
 const textNodes = [
   {
     id: 1,
@@ -139,7 +143,10 @@ const textNodes = [
 ]
 
 
-
+const savedState = localStorage.getItem('state')
+if (savedState) {
+  state = JSON.parse(savedState)
+}
 
 
 
