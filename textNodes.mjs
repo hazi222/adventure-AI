@@ -1,3 +1,4 @@
+import { startGame, showTextNode, } from "./game.mjs"
 
  const textNodes = [
     {
